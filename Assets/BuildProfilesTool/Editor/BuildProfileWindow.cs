@@ -304,10 +304,10 @@ namespace BuildProfilesTool
 
         private void DrawSimpleButton(string message, System.Action onPressed)
         {
-            if (GUILayout.Button(message))
-            {
-                onPressed?.Invoke();
-            }
+            if (!GUILayout.Button(message)) return;
+
+            onPressed?.Invoke();
+            GUIUtility.ExitGUI();
         }
 
         private void DrawProfiles()
