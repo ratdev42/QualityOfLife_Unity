@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c311ddfccfb7e4b970b7187fabb206, type: 3}
+  m_Name: SpeciesTypeDefinition
+  m_EditorClassIdentifier: Assembly-CSharp::EnumForge.EnumDefinition
+  name: SpeciesType
+  outputFolderPath: Assets/EnumForge/Definitions/Demo/Enums
+  isMask: 0
+  entries:
+  - name: Mammals
+    value: 0
+  - name: Fishes
+    value: 1
+  - name: Reptiles
+    value: 2
+  nextValue: 3
+  lastGeneratedPath: Assets/EnumForge/Definitions/Demo/Enums/SpeciesType.cs
