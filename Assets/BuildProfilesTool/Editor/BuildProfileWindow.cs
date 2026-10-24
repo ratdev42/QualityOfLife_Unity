@@ -46,6 +46,11 @@ namespace BuildProfilesTool
            RefreshProfiles();
         }
 
+        private void OnDestroy()
+        {
+            EditorDelay.CancelAll(this);
+        }
+
         private void OnGUI()
         {
             DrawToolbar();
@@ -367,12 +372,12 @@ namespace BuildProfilesTool
                     GUILayout.FlexibleSpace();
 
                     DrawSimpleButton("Duplicate", () => Duplicate(profile));
-                    DrawSimpleButton("Apply", () => EditorApplication.delayCall += () => ApplyProfileSettings(profile, true));
+                    DrawSimpleButton("Apply", () => EditorDelay.Call(this, () => ApplyProfileSettings(profile, true)));
 
                     Color prevColor = GUI.backgroundColor;
                     GUI.backgroundColor = buildButtonBackgroundColor;
 
-                    DrawSimpleButton("Build", () => EditorApplication.delayCall += () => Build(profile));
+                    DrawSimpleButton("Build", () => EditorDelay.Call(this, () => Build(profile)));
 
                     GUI.backgroundColor = prevColor;
                 }
