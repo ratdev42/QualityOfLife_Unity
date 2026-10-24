@@ -118,7 +118,7 @@ namespace EnumForge
             builder.AppendLine("// </auto-generated>");
             builder.AppendLine();
 
-            if (enumDefinition.isMask) builder.AppendLine($"{indentation}[System.Flags]");
+            if (enumDefinition.isMask) builder.AppendLine($"[System.Flags]");
 
             builder.AppendLine($"public enum {enumDefinition.name}");
             builder.AppendLine($"{{");
