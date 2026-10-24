@@ -37,16 +37,13 @@ namespace EnumForge.Editor
                 onAddCallback = AddEntry,
             };
 
+#pragma warning disable UDR0004 // unsubscribed in OnDisable
             Undo.undoRedoPerformed += OnUndoRedo;
+#pragma warning restore UDR0004
             RefreshStatus();
         }
 
         private void OnDisable()
-        {
-            Undo.undoRedoPerformed -= OnUndoRedo;
-        }
-
-        private void OnDestroy()
         {
             Undo.undoRedoPerformed -= OnUndoRedo;
         }
