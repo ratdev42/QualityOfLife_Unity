@@ -30,7 +30,11 @@ namespace BuildProfilesTool
         [MenuItem("Tools/Build Profiles/Manager", priority = 0)]
         public static void Open()
         {
-            BuildProfileWindow window = GetWindow<BuildProfileWindow>("Build Profiles");
+            Texture icon = EditorGUIUtility.IconContent("BuildSettings.Editor.Small").image;
+
+            BuildProfileWindow window = GetWindow<BuildProfileWindow>();
+
+            window.titleContent = new GUIContent("Build Profiles", icon);
             window.minSize = windowMinSize;
             window.RefreshProfiles();
         }
@@ -44,6 +48,8 @@ namespace BuildProfilesTool
         private void OnEnable()
         {
            RefreshProfiles();
+
+            
         }
 
         private void OnDestroy()
