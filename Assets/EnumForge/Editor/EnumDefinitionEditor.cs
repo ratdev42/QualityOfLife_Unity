@@ -46,6 +46,11 @@ namespace EnumForge.Editor
             Undo.undoRedoPerformed -= OnUndoRedo;
         }
 
+        private void OnDestroy()
+        {
+            Undo.undoRedoPerformed -= OnUndoRedo;
+        }
+
         private void OnUndoRedo()
         {
             RefreshStatus();
