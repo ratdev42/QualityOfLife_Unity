@@ -10,11 +10,11 @@ namespace RD42.Utils
         private readonly Object owner;
 
         //Ctor 
-        public CustomLogger(Object owner, string tag, string color)
+        public CustomLogger(Object owner, string tag, Color color)
         {
             this.owner = owner;
             this.tag = tag;
-            this.color = color;
+            this.color = "#" + ColorUtility.ToHtmlStringRGBA(color);
         }
 
         [Conditional("DEBUG")]
