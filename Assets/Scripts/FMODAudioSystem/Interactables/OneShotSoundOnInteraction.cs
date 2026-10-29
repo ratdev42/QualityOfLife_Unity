@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class OneShotSoundOnInteraction : InjectedMonoBehaviour, IInteractable
 {
-    [SerializeField] private EventReference soundReference;
+    [SerializeField] private FmodEvent soundEvent;
     [Required] private readonly new Collider collider;
 
     private CustomLogger logger;
@@ -26,6 +26,6 @@ public class OneShotSoundOnInteraction : InjectedMonoBehaviour, IInteractable
 
     public void OnInteraction()
     {
-        AudioManager.Instance.PlayOneShot(soundReference, transform.position);
+        AudioManager.Instance.PlayOneShot(FmodEvents.Instance.Get(soundEvent), transform.position);
     }
 }

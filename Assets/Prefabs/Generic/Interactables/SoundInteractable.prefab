@@ -125,10 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b556f26e0ac4113458585c870f508d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OneShotSoundOnInteraction
-  soundReference:
-    Guid:
-      Data1: -1366130823
-      Data2: 1097373561
-      Data3: -1633884505
-      Data4: 2119805827
-    Path: event:/Crash_fx_01
+  soundEvent: 3

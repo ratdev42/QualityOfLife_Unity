@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aba7f013cb5dd844862713a266dc968, type: 3}
+  m_Name: FmodEventsEntries
+  m_EditorClassIdentifier: Assembly-CSharp::FmodEventsEntries
+  <Cache>k__BackingField:
+  - key: 0
+    value:
+      Guid:
+        Data1: -1366130823
+        Data2: 1097373561
+        Data3: -1633884505
+        Data4: 2119805827
+      Path: event:/Crash_fx_01
