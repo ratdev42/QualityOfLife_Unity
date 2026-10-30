@@ -22,9 +22,9 @@ public static class EditorDelay
         if (action == null) throw new ArgumentNullException(nameof(action));
 
         // Callback unsubscribes itself after running, so nothing stays registered.
-#pragma warning disable UDR0005
+#pragma warning disable UDR0004
         EditorApplication.delayCall += Callback;
-#pragma warning restore UDR0005
+#pragma warning restore UDR0004
 
         void Callback()
         {
@@ -51,9 +51,9 @@ public static class EditorDelay
         list.Add(Callback);
 
         // Callback unsubscribes itself after running, and the owner can cancel it via CancelAll.
-#pragma warning disable UDR0005
+#pragma warning disable UDR0004
         EditorApplication.delayCall += Callback;
-#pragma warning restore UDR0005
+#pragma warning restore UDR0004
 
         void Callback()
         {
