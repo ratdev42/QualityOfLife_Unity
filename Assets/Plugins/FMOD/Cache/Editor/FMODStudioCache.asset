@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: ../../Fmod/audio-system/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639287842810574574
+  lastModified: 639288988147616930
   FileSizes:
   - Name: Desktop
-    Value: 99456
+    Value: 129472
   Exists: 1
+--- !u!114 &-5144713383846500925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Footsteps
+  Guid:
+    Data1: 1830318957
+    Data2: 1260790035
+    Data3: -1447645263
+    Data4: 1408041275
+  Banks:
+  - {fileID: -8773865291497417342}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 345
 --- !u!114 &-5033682618789834380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,7 +62,7 @@ MonoBehaviour:
   Path: ../../Fmod/audio-system/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639287842808700192
+  lastModified: 639288988146675613
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -58,16 +85,19 @@ MonoBehaviour:
   - {fileID: -8773865291497417342}
   EditorEvents:
   - {fileID: 8967765128269260132}
+  - {fileID: -5144713383846500925}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5033682618789834380}
   StringsBanks:
   - {fileID: 7136411637972936776}
   cacheVersion: 131861
-  cacheTime: 639287842810574574
+  cacheTime: 639288988147616930
   SerializableEventsDict:
   - key: event:/Crash_fx_01
     index: 0
+  - key: event:/Footsteps
+    index: 1
 --- !u!114 &7136411637972936776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,10 +113,10 @@ MonoBehaviour:
   Path: ../../Fmod/audio-system/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639287842808715227
+  lastModified: 639288988146680653
   FileSizes:
   - Name: Desktop
-    Value: 818
+    Value: 870
   Exists: 1
 --- !u!114 &8967765128269260132
 MonoBehaviour:

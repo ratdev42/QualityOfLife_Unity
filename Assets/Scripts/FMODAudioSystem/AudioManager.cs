@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
+    [SerializeField] private FmodEventsEntries entries;
+
     private CustomLogger logger;
     protected override void Awake()
     {
@@ -12,8 +14,9 @@ public class AudioManager : Singleton<AudioManager>
         logger = new(this, "AudioManager", Color.orange);
     }
 
-    public void PlayOneShot(EventReference soundRef, Vector3 worldPos)
+    public void PlayOneShot(FmodEvent soundEvent, Vector3 worldPos)
     {
+        EventReference soundRef = entries.Cache[soundEvent];
         RuntimeManager.PlayOneShot(soundRef, worldPos);
     }
 }

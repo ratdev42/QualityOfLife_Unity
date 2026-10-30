@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FmodEventsEntries
   m_EditorClassIdentifier: Assembly-CSharp::FmodEventsEntries
   <Cache>k__BackingField:
-  - key: 0
+  - key: 3
     value:
       Guid:
         Data1: -1366130823
@@ -21,3 +21,11 @@ MonoBehaviour:
         Data3: -1633884505
         Data4: 2119805827
       Path: event:/Crash_fx_01
+  - key: 4
+    value:
+      Guid:
+        Data1: 1830318957
+        Data2: 1260790035
+        Data3: -1447645263
+        Data4: 1408041275
+      Path: event:/Footsteps

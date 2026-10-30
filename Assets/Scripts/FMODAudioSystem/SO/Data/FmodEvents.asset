@@ -18,5 +18,7 @@ MonoBehaviour:
   entries:
   - name: Crash_01
     value: 3
-  nextValue: 4
+  - name: Footsteps
+    value: 4
+  nextValue: 5
   lastGeneratedPath: Assets/Scripts/Enums/FmodEvent.cs

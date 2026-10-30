@@ -6,4 +6,5 @@
 public enum FmodEvent
 {
     Crash_01 = 3,
+    Footsteps = 4,
 }
