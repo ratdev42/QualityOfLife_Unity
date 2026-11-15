@@ -37,18 +37,18 @@ namespace EnumForge.Editor
                 onAddCallback = AddEntry,
             };
 
+#pragma warning disable UDR0004 // unsubscribed in OnDisable
+#pragma warning disable UDR0005 // unsubscribed in OnDisable
             Undo.undoRedoPerformed += OnUndoRedo;
+#pragma warning restore UDR0004
+#pragma warning restore UDR0005
             RefreshStatus();
         }
 
         private void OnDisable()
         {
             Undo.undoRedoPerformed -= OnUndoRedo;
-        }
-
-        private void OnDestroy()
-        {
-            Undo.undoRedoPerformed -= OnUndoRedo;
+            EditorDelay.CancelAll(this);
         }
 
         private void OnUndoRedo()
@@ -149,9 +149,10 @@ namespace EnumForge.Editor
 
                 if (GUILayout.Button(label, GUILayout.Height(28)))
                 {
-                    EnumCodeGenerator.Generate(Definition);
-                    serializedObject.Update();
-                    RefreshStatus();
+                    GUIUtility.keyboardControl = 0; // takes focus off the field, so the delayed field saves its text
+
+                    EditorDelay.Call(this, GenerateFromInspector);
+                    
                     GUIUtility.ExitGUI();
                 }
             }
@@ -163,7 +164,16 @@ namespace EnumForge.Editor
                 EditorGUIUtility.PingObject(AssetDatabase.LoadAssetAtPath<MonoScript>(path));
             }
         }
-        
+
+        private void GenerateFromInspector()
+        {
+            serializedObject.ApplyModifiedProperties(); // safety net in case the save hasn't been applied yet
+            EnumCodeGenerator.Generate(Definition);
+            serializedObject.Update();
+            RefreshStatus();
+            Repaint();
+        }
+
 
         private void DrawEntry(Rect rect, int index, bool isActive, bool isFocused)
         {
@@ -185,7 +195,7 @@ namespace EnumForge.Editor
             }
 
             EditorGUI.BeginChangeCheck();
-            string newName = EditorGUI.DelayedTextField(nameRect, name.stringValue);
+            string newName = EditorGUI.TextField(nameRect, name.stringValue);
 
             if (EditorGUI.EndChangeCheck())
             {

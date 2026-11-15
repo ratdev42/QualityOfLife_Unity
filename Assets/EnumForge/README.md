@@ -55,9 +55,9 @@ The demo in `Assets/EnumForge/Definitions/Demo` shows both kinds: `SpeciesTypeDe
 Assets/
 └── EnumForge/
     ├── Editor/
-    │    └── EnumDefinitionEditor.cs  # Custom Inspector (entries list, Generate button)
-    ├── EnumDefinition.cs            # ScriptableObject: the source of truth
-    └── EnumCodeGenerator.cs         # Validation, sanitizing and file generation
+    │    ├── EnumDefinitionEditor.cs  # Custom Inspector (entries list, Generate button)
+    │    └── EnumCodeGenerator.cs     # Validation, sanitizing and file generation
+    └── EnumDefinition.cs            # ScriptableObject: the source of truth
 ```
 
 ## Credits
